@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -76,9 +76,915 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ball-b
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2573
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7620cab734fe244349a4f477fab1e825
+      internalID: 750488883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die-1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 2362
+        width: 204
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233e81083bcfa4534a0886f9fa794377
+      internalID: 445684962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die-2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2403
+        width: 286
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9feb0276eab488096a5ed9d87330a9
+      internalID: -1361767216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-t
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2513
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fb4828cbbb84bde8d4cea60e0ca2c5
+      internalID: -1320786533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-r
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2513
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87180b391c1e406da62c6b47991e7a3
+      internalID: 1350106798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die-3
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 2396
+        width: 316
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ffda5ff5e6b4185b80976fba60f70f
+      internalID: 1629188351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-g
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2459
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e03798a21c4c4576b55fd69bc3e5161
+      internalID: -964309630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-p
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2459
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159d70640444243b8be7c2e767922b24
+      internalID: 761527035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-w
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2404
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f6945b30ab14531bcb0fe0f8564ad9
+      internalID: 1036974477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball-y
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2404
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b3b3249c03e4e318cc038edf546ac3
+      internalID: 1510021160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1958
+        width: 217
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e7abdc9e7134382879a71d0cd37a98
+      internalID: -1204433837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-2
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1959
+        width: 202
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e1c13d2a39e484eb273f4965ab0e19
+      internalID: 50577261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-3
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1961
+        width: 161
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1cb28d6ac8a4d30bb0720f19f6be35
+      internalID: 271432800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-4
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 2052
+        width: 169
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a136c08a8d5b1450aaa30873dcfdecec
+      internalID: 1292579141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-5
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2079
+        width: 160
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7190a24810d6a419db35587989ab3e4d
+      internalID: -475503221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-6
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1957
+        width: 161
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5c68ace134746548e916f331c9c783
+      internalID: 316618819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-1
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 1978
+        width: 279
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e71bc9dba112436fbe917b33b8fdbc1
+      internalID: 447398613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-atlas_17
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 1945
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e63b4d760db40fa9cbf450fd892927
+      internalID: -181126544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run-1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1634
+        width: 202
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228601bd363664643bcaa9b3463238a0
+      internalID: 1869379034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run-2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1631
+        width: 170
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28508e3ec554e43a491aa3edaee7fca6
+      internalID: 1417307960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run-3
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1631
+        width: 159
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e2ed73654a14a2ab024b0ae03a45ab
+      internalID: 2064167178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run-4
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1635
+        width: 144
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372fee82c12564d9f8bf69bf8b12999b
+      internalID: -1476688008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run-5
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 1631
+        width: 167
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1a0565a3ce1487f967e5c1c9f2fdfe
+      internalID: 1164010108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-3
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1631
+        width: 127
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75385515444fc4d16a6fc90b91d01c28
+      internalID: -948197736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-2
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 1811
+        width: 297
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5752711fad9c64d6b812341602916cb9
+      internalID: 1011175028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-3
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 1644
+        width: 291
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca56228135dbd4504bf0af1a45ad86cb
+      internalID: 1204907263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1463
+        width: 117
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7158a160e73fb42d8b89a04fd36666a9
+      internalID: 23499880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1463
+        width: 116
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba1df71885364c58a977c9598eda003
+      internalID: -1107304337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1463
+        width: 90
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce74124b565a46c0a6a7b9ac6a138f9
+      internalID: 1616060362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-4
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1463
+        width: 68
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198934c1e8fd849beb8cd2ddd8ed81bc
+      internalID: -453502344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-5
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1463
+        width: 27
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8340a1fafd8ee4f03bccd82cc25981d5
+      internalID: 1034771556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-6
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1463
+        width: 68
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e3179378c1469781b08356fe7e871
+      internalID: 1437024724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1463
+        width: 90
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbcd3b0289204cbe89acdd0c18fccf3
+      internalID: 810690726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin-8
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1463
+        width: 116
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ef346c5605d450e9fc9869bfc67aff
+      internalID: 1057816690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potion
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1465
+        width: 76
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60299a267ac224efd95c7f73dd6144de
+      internalID: -779956747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 1465
+        width: 91
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8abe4b8a0e24eee9789afd087f7b3a
+      internalID: -1716600773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-2
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 1463
+        width: 179
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4526bf9d88e844031ba92173e1ce259a
+      internalID: -1957218409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 510
+        width: 1777
+        height: 898
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92f563a37bd8450984a10e4689ceb89
+      internalID: 894183123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform-m
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 316
+        width: 561
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839ca071540ad4c16a505c21dd74180c
+      internalID: -682847474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform-s
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 308
+        width: 325
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a6293f76ef94d0daf94615db2f993a
+      internalID: -724305304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 273
+        width: 579
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b8ceb1f01d14f1f91704a07eb19a75
+      internalID: 1413146947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform-l
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 83
+        width: 1312
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5646e714ff547d7939d684ad21fb66
+      internalID: 1410539005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +995,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ball-b: 750488883
+      coin-2: -1107304337
+      run-2: 1417307960
+      jump-3: 271432800
+      coin-4: -453502344
+      platform-l: 1410539005
+      run-3: 2064167178
+      die-3: 1629188351
+      ball-y: 1510021160
+      sprite-atlas_17: -181126544
+      jump-6: 316618819
+      coin-6: 1437024724
+      enemy-1: 447398613
+      ball-w: 1036974477
+      rock-2: -1957218409
+      jump-4: 1292579141
+      background: 894183123
+      rock-3: -948197736
+      coin-7: 810690726
+      potion: -779956747
+      coin-3: 1616060362
+      platform-s: -724305304
+      ball-r: 1350106798
+      die-1: 445684962
+      die-2: -1361767216
+      platform-m: -682847474
+      jump-1: -1204433837
+      jump-2: 50577261
+      coin-8: 1057816690
+      run-1: 1869379034
+      jump-5: -475503221
+      coin-5: 1034771556
+      enemy-2: 1011175028
+      ball-t: -1320786533
+      run-5: 1164010108
+      enemy-3: 1204907263
+      ball-g: -964309630
+      floor: 1413146947
+      coin-1: 23499880
+      ball-p: 761527035
+      rock-: -1716600773
+      run-4: -1476688008
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
