@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Variables of the character
-    public float jumpForce = 6f;
+    public float jumpForce = 9f;
     Rigidbody2D rigidBody;
     public Animator animator;
 
@@ -69,12 +69,12 @@ public class PlayerController : MonoBehaviour
                     )
             )
         {
-            animator.enabled = true;
+            //animator.enabled = true;
             return true;
         }
         else
         {
-            animator.enabled = false;
+            //animator.enabled = false;
             return false;
         }
 
