@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Variables of the character
-    public float jumpForce = 9f;
+    public float jumpForce = 6f;
+    public float runningSpeed = 2f; // m/s
+
     Rigidbody2D rigidBody;
     public Animator animator;
 
@@ -41,13 +43,20 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
     }
 
+    private void FixedUpdate() {
+        if(rigidBody.velocity.x < runningSpeed)
+        {
+            rigidBody.velocity = new Vector2(runningSpeed, rigidBody.velocity.y);
+        }
+    }
+
     void Jump()
     {
         if (IsTouchingTheGround())
         {
             rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            
         }
+        
     }
 
     //Check if player is touching the ground
