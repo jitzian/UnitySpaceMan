@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask groundMask;
 
+    private bool isLookingRight = true;
+
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -32,12 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Prepare to Jump..!!");
-            Jump();
-        }
+        
         animator.SetBool(STATE_IS_ON_THE_GROUND, IsTouchingTheGround());
+
+        checkInputActions();
 
         //Show gizmo..
         Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
@@ -46,7 +46,27 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         if(rigidBody.velocity.x < runningSpeed)
         {
-            rigidBody.velocity = new Vector2(runningSpeed, rigidBody.velocity.y);
+            rigidBody.velocity = new Vector2(isLookingRight? runningSpeed: -runningSpeed, rigidBody.velocity.y);
+        }
+    }
+
+    private void checkInputActions() {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Prepare to Jump..!!");
+            Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            isLookingRight = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            isLookingRight = true;
         }
     }
 
@@ -56,7 +76,6 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        
     }
 
     //Check if player is touching the ground
