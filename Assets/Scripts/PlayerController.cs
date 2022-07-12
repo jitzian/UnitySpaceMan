@@ -18,10 +18,18 @@ public class PlayerController : MonoBehaviour
 
     private bool isLookingRight = true;
 
-    void Awake()
+    public static PlayerController sharedInstance = null;
+
+
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        if(sharedInstance == null)
+        {
+            sharedInstance = this;
+        }
     }
 
     // Use this for initialization
@@ -44,14 +52,24 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if(rigidBody.velocity.x < runningSpeed)
+        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME)
         {
-            rigidBody.velocity = new Vector2(isLookingRight? runningSpeed: -runningSpeed, rigidBody.velocity.y);
+            if (rigidBody.velocity.x < runningSpeed)
+            {
+                rigidBody.velocity = new Vector2(isLookingRight ? runningSpeed : -runningSpeed, rigidBody.velocity.y);
+            }
+        }
+        else {
+            //Stop the character if we are not IN_GAME
+            //rigidBody.velocity = Vector2.zero;
+            rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
     }
 
     private void checkInputActions() {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+
+
+        if (Input.GetButtonDown("Jump"))
         {
             Debug.Log("Prepare to Jump..!!");
             Jump();
@@ -72,9 +90,12 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (IsTouchingTheGround())
+        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME)
         {
-            rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (IsTouchingTheGround())
+            {
+                rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
     }
 
