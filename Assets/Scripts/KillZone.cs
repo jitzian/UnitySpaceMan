@@ -27,5 +27,10 @@ public class KillZone : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Outside of the dead zone");
+    }
+
+
 }

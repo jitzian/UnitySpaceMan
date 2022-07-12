@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
         }
         else {
             //Stop the character if we are not IN_GAME
-            //rigidBody.velocity = Vector2.zero;
             rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
     }
@@ -103,14 +102,14 @@ public class PlayerController : MonoBehaviour
     bool IsTouchingTheGround()
     {
 
-        /*return Physics2D.Raycast(
+        return Physics2D.Raycast(
             this.transform.position,
             Vector2.down,
             1.5f,
             groundMask
-        ) ? true : false;*/
+        ) ? true : false;
 
-        if(Physics2D.Raycast(
+        /*if(Physics2D.Raycast(
                         this.transform.position,
                         Vector2.down,
                         1.5f,
@@ -118,21 +117,20 @@ public class PlayerController : MonoBehaviour
                     )
             )
         {
-            //animator.enabled = true;
+            //animator.enabled = true;            
             return true;
         }
         else
         {
             //animator.enabled = false;
             return false;
-        }
+        }*/
 
     }
 
     public void die() {
         this.animator.SetBool(STATE_IS_ALIVE, false);
         GameManager.sharedInstance.gameOver();
-
     }
 
 }
