@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigidBody;
     public Animator animator;
+    private Vector3 startPosition;
 
     const string STATE_IS_ALIVE = "isAlive";
     const string STATE_IS_ON_THE_GROUND = "isOnTheGround";
@@ -25,8 +26,9 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        startPosition = this.transform.position;
 
-        if(sharedInstance == null)
+        if (sharedInstance == null)
         {
             sharedInstance = this;
         }
@@ -39,10 +41,16 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(STATE_IS_ON_THE_GROUND, true);
     }
 
+    public void startGame()
+    {
+        this.transform.position = startPosition;
+        this.rigidBody.velocity = Vector2.zero;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
         animator.SetBool(STATE_IS_ON_THE_GROUND, IsTouchingTheGround());
 
         checkInputActions();
@@ -51,7 +59,8 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME)
         {
             if (rigidBody.velocity.x < runningSpeed)
@@ -59,13 +68,15 @@ public class PlayerController : MonoBehaviour
                 rigidBody.velocity = new Vector2(isLookingRight ? runningSpeed : -runningSpeed, rigidBody.velocity.y);
             }
         }
-        else {
+        else
+        {
             //Stop the character if we are not IN_GAME
             rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
     }
 
-    private void checkInputActions() {
+    private void checkInputActions()
+    {
 
 
         if (Input.GetButtonDown("Jump"))
@@ -128,7 +139,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void die() {
+    public void die()
+    {
         this.animator.SetBool(STATE_IS_ALIVE, false);
         GameManager.sharedInstance.gameOver();
     }
