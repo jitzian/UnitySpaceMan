@@ -36,8 +36,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.S))
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") && currentGameState != GameState.IN_GAME)
         {
             startGame();
         }
@@ -74,7 +73,6 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.IN_GAME:
                 {
-                    //TODO: TBD
                     controller.startGame();
                     break;
                 }
