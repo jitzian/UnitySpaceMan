@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     //Variables of the character
     public float jumpForce = 6f;
     public float runningSpeed = 2f; // m/s
@@ -22,44 +21,36 @@ public class PlayerController : MonoBehaviour
     public static PlayerController sharedInstance = null;
 
 
-    private void Awake()
-    {
+    private void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         startPosition = this.transform.position;
 
-        if (sharedInstance == null)
-        {
+        if (sharedInstance == null) {
             sharedInstance = this;
         }
     }
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         Debug.Log("Start");
         startPosition = this.transform.position;
     }
 
-    public void startGame()
-    {
+    public void startGame() {
         Debug.Log("startGame" + this.animator.GetBool(STATE_IS_ALIVE));
         animator.SetBool(STATE_IS_ALIVE, true);
         animator.SetBool(STATE_IS_ON_THE_GROUND, true);
         Invoke("restartPosition", 0.2f);
-
     }
 
-    private void restartPosition()
-    {
+    private void restartPosition() {
         this.transform.position = startPosition;
         this.rigidBody.velocity = Vector2.zero;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
+    void Update() {
         animator.SetBool(STATE_IS_ON_THE_GROUND, IsTouchingTheGround());
 
         checkInputActions();
@@ -68,66 +59,53 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(this.transform.position, Vector2.down * 1.5f, Color.red);
     }
 
-    private void FixedUpdate()
-    {
-        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME)
-        {
-            if (rigidBody.velocity.x < runningSpeed)
-            {
+    private void FixedUpdate() {
+        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME) {
+            if (rigidBody.velocity.x < runningSpeed) {
                 rigidBody.velocity = new Vector2(isLookingRight ? runningSpeed : -runningSpeed, rigidBody.velocity.y);
             }
         }
-        else
-        {
+        else {
             //Stop the character if we are not IN_GAME
             rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
     }
 
-    private void checkInputActions()
-    {
-
-
-        if (Input.GetButtonDown("Jump"))
-        {
+    private void checkInputActions() {
+        if (Input.GetButtonDown("Jump")) {
             Debug.Log("Prepare to Jump..!!");
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GetComponent<SpriteRenderer>().flipX = true;
             isLookingRight = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
             GetComponent<SpriteRenderer>().flipX = false;
             isLookingRight = true;
         }
     }
 
-    void Jump()
-    {
-        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME)
-        {
-            if (IsTouchingTheGround())
-            {
+    void Jump() {
+        if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME) {
+            if (IsTouchingTheGround()) {
                 rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }
     }
 
     //Check if player is touching the ground
-    bool IsTouchingTheGround()
-    {
-
+    bool IsTouchingTheGround() {
         return Physics2D.Raycast(
             this.transform.position,
             Vector2.down,
             1.5f,
             groundMask
-        ) ? true : false;
+        )
+            ? true
+            : false;
 
         /*if(Physics2D.Raycast(
                         this.transform.position,
@@ -145,13 +123,10 @@ public class PlayerController : MonoBehaviour
             //animator.enabled = false;
             return false;
         }*/
-
     }
 
-    public void die()
-    {
+    public void die() {
         this.animator.SetBool(STATE_IS_ALIVE, false);
         GameManager.sharedInstance.gameOver();
     }
-
 }
