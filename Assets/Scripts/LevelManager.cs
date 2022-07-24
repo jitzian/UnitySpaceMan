@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
     public static LevelManager sharedInstance = null;
 
-    public List<LevelBlock> allTheLevelBlocks = new List<LevelBlock>();
-    public List<LevelBlock> currentLevelBlocks = new List<LevelBlock>();
+    public List<LevelBlock> allTheLevelBlocks = new();
+    public List<LevelBlock> currentLevelBlocks = new();
     public Transform levelStartPosition;
 
     private void Awake() {
@@ -54,14 +54,20 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void removeLevelBlock() {
+        var oldBlock = currentLevelBlocks[0];
+        currentLevelBlocks.Remove(oldBlock);
+        Destroy(oldBlock.gameObject);
     }
 
     public void removeAllLevelBlocks() {
+        while (currentLevelBlocks.Count > 0) {
+            removeLevelBlock();
+        }
     }
 
     //Initialization
     public void generateInitialBlocks() {
-        for (int i = 0; i < 3; i++) {
+        for (var i = 0; i < 3; i++) {
             addLevelBlock();
         }
     }
