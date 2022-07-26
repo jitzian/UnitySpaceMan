@@ -11,7 +11,7 @@ public enum GameState {
 public class GameManager : MonoBehaviour {
     public GameState currentGameState = GameState.MENU;
 
-    public static GameManager sharedInstance = null;
+    public static GameManager sharedInstance;
 
     private PlayerController controller;
 
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (Input.GetButtonDown("Submit") && currentGameState != GameState.IN_GAME) {
             startGame();
         }
@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour {
             }
             case GameState.IN_GAME:
             {
+                LevelManager.sharedInstance.removeAllLevelBlocks();
+                LevelManager.sharedInstance.generateInitialBlocks();
                 controller.startGame();
                 break;
             }
