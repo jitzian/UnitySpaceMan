@@ -45,8 +45,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void restartPosition() {
-        this.transform.position = startPosition;
-        this.rigidBody.velocity = Vector2.zero;
+        transform.position = startPosition;
+        rigidBody.velocity = Vector2.zero;
+        
+        //Reset Camera to initial position after player dies
+        var mainCamera = GameObject.Find("Main Camera");
+        mainCamera.GetComponent<CameraFollow>().resetCameraPosition();
     }
 
     // Update is called once per frame
