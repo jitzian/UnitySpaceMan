@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
         switch (gameState) {
             case GameState.MENU:
             {
-                MenuManager.sharedInstance.showMainMenu(true);
+                MenuManager.sharedInstance.ShowMainMenu(true);
                 break;
             }
             case GameState.IN_GAME:
@@ -62,13 +62,13 @@ public class GameManager : MonoBehaviour {
                 LevelManager.sharedInstance.removeAllLevelBlocks();
                 LevelManager.sharedInstance.generateInitialBlocks();
                 controller.startGame();
-                MenuManager.sharedInstance.showMainMenu(false);
+                MenuManager.sharedInstance.ShowMainMenu(false);
                 break;
             }
             case GameState.GAME_OVER:
             {
                 //TODO: TBD
-                MenuManager.sharedInstance.showMainMenu(true);
+                MenuManager.sharedInstance.ShowMainMenu(true);
                 break;
             }
         }

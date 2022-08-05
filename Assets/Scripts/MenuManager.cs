@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour {
@@ -14,22 +11,13 @@ public class MenuManager : MonoBehaviour {
         }
     }
 
-    /*public void showMainMenu() {
-        menuCanvas.enabled = true;
-    }
-
-    public void hideMainMenu() {
-        menuCanvas.enabled = false;
-    }*/
-
-    public void showMainMenu(bool show) {
+    public void ShowMainMenu(bool show) {
         menuCanvas.enabled = show;
     }
 
-    public void exitGame() {
-        if (UnityEditor.EditorApplication.isPlaying) {
-            UnityEditor.EditorApplication.isPlaying = false;
+    public void ExitGame() {
+        if (EditorApplication.isPlaying) {
+            EditorApplication.isPlaying = false;
         }
-        
     }
 }
