@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState {
@@ -19,6 +17,7 @@ public class GameManager : MonoBehaviour {
         if (sharedInstance == null) {
             sharedInstance = this;
         }
+        GameOverMenuManager.sharedInstance.ShowGameOverMenu(false);
     }
 
 
@@ -55,6 +54,7 @@ public class GameManager : MonoBehaviour {
             case GameState.MENU:
             {
                 MenuManager.sharedInstance.ShowMainMenu(true);
+
                 break;
             }
             case GameState.IN_GAME:
@@ -63,12 +63,14 @@ public class GameManager : MonoBehaviour {
                 LevelManager.sharedInstance.generateInitialBlocks();
                 controller.startGame();
                 MenuManager.sharedInstance.ShowMainMenu(false);
+                GameOverMenuManager.sharedInstance.ShowGameOverMenu(false);
                 break;
             }
             case GameState.GAME_OVER:
             {
                 //TODO: TBD
-                MenuManager.sharedInstance.ShowMainMenu(true);
+                //MenuManager.sharedInstance.ShowMainMenu(true);
+                GameOverMenuManager.sharedInstance.ShowGameOverMenu(true);
                 break;
             }
         }
