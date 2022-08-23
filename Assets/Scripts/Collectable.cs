@@ -13,7 +13,7 @@ public class Collectable : MonoBehaviour {
     private SpriteRenderer sprite;
     private CircleCollider2D itemCollider;
 
-    private bool isCollected = false;
+    private bool isCollected;
     public int value = 1;
 
     private void Awake() {
@@ -22,7 +22,7 @@ public class Collectable : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player") {
+        if (col.CompareTag("Player")) {
             collect();
         }
     }
