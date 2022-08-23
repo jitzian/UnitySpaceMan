@@ -40,8 +40,8 @@ public class Collectable : MonoBehaviour {
     }
 
     private void collect() {
-        isCollected = true;
         hide();
+        isCollected = true;
 
         switch (type) {
             case CollectableItem.HEALTH_POTION:
@@ -49,6 +49,7 @@ public class Collectable : MonoBehaviour {
             case CollectableItem.MANA_POTION:
                 break;
             case CollectableItem.MONEY:
+                GameManager.sharedInstance.collectObject(this);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

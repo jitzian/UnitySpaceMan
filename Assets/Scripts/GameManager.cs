@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour {
 
     private PlayerController controller;
 
+    public int collectedObject = 0;
+
     private void Awake() {
         if (sharedInstance == null) {
             sharedInstance = this;
         }
+
         GameOverMenuManager.sharedInstance.ShowGameOverMenu(false);
     }
 
@@ -75,6 +78,10 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        this.currentGameState = gameState;
+        currentGameState = gameState;
+    }
+
+    public void collectObject(Collectable collectable) {
+        collectedObject += collectable.value;
     }
 }
