@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -14,12 +15,22 @@ public class PlayerController : MonoBehaviour {
     const string STATE_IS_ALIVE = "isAlive";
     const string STATE_IS_ON_THE_GROUND = "isOnTheGround";
 
+    private int healthPoints { set; get; }
+    private int manaPoints { set; get; }
+
+    //Contants
+    public const int INITIAL_HEALTH = 100;
+    public const int INITIAL_MANA = 15;
+    public const int MAX_HEALTH = 200;
+    public const int MAX_MANA = 30;
+    public const int MIN_HEALTH = 10;
+    public const int MIN_MANA = 0;
+
     public LayerMask groundMask;
 
     private bool isLookingRight = true;
 
     public static PlayerController sharedInstance = null;
-
 
     private void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -38,6 +49,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void startGame() {
+        healthPoints = INITIAL_HEALTH;
+        manaPoints = INITIAL_MANA;
+
         Debug.Log("startGame" + this.animator.GetBool(STATE_IS_ALIVE));
         animator.SetBool(STATE_IS_ALIVE, true);
         animator.SetBool(STATE_IS_ON_THE_GROUND, true);
@@ -47,7 +61,7 @@ public class PlayerController : MonoBehaviour {
     private void restartPosition() {
         transform.position = startPosition;
         rigidBody.velocity = Vector2.zero;
-        
+
         //Reset Camera to initial position after player dies
         var mainCamera = GameObject.Find("Main Camera");
         mainCamera.GetComponent<CameraFollow>().resetCameraPosition();
@@ -132,5 +146,17 @@ public class PlayerController : MonoBehaviour {
     public void die() {
         this.animator.SetBool(STATE_IS_ALIVE, false);
         GameManager.sharedInstance.gameOver();
+    }
+
+    public void collectHealth(int points) {
+        if (healthPoints < MAX_HEALTH) {
+            healthPoints += points;
+        }
+    }
+
+    public void collectMana(int points) {
+        if (manaPoints < MAX_MANA) {
+            manaPoints += points;
+        }
     }
 }
