@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  runningSpeed: 2
+  runningSpeed: 2.5
   animator: {fileID: 0}
   groundMask:
     serializedVersion: 2
@@ -2843,7 +2843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2118843534
 MonoBehaviour:
   m_ObjectHideFlags: 0
