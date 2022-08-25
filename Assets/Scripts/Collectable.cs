@@ -36,7 +36,6 @@ public class Collectable : MonoBehaviour {
     private void hide() {
         sprite.enabled = false;
         itemCollider.enabled = false;
-        
     }
 
     private void collect() {
@@ -45,8 +44,10 @@ public class Collectable : MonoBehaviour {
 
         switch (type) {
             case CollectableItem.HEALTH_POTION:
+                GameObject.Find("Player").GetComponent<PlayerController>().collectHealth(value);
                 break;
             case CollectableItem.MANA_POTION:
+                GameObject.Find("Player").GetComponent<PlayerController>().collectMana(value);
                 break;
             case CollectableItem.MONEY:
                 GameManager.sharedInstance.collectObject(this);
@@ -55,5 +56,4 @@ public class Collectable : MonoBehaviour {
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
 }
