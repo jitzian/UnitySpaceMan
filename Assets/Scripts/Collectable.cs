@@ -16,6 +16,12 @@ public class Collectable : MonoBehaviour {
     private bool isCollected;
     public int value = 1;
 
+    private PlayerController player;
+
+    private void Start() {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
+
     private void Awake() {
         sprite = GetComponent<SpriteRenderer>();
         itemCollider = GetComponent<CircleCollider2D>();
@@ -44,10 +50,12 @@ public class Collectable : MonoBehaviour {
 
         switch (type) {
             case CollectableItem.HEALTH_POTION:
-                GameObject.Find("Player").GetComponent<PlayerController>().collectHealth(value);
+                //GameObject.Find("Player").GetComponent<PlayerController>().collectHealth(value);
+                player.collectHealth(value);
                 break;
             case CollectableItem.MANA_POTION:
-                GameObject.Find("Player").GetComponent<PlayerController>().collectMana(value);
+                //GameObject.Find("Player").GetComponent<PlayerController>().collectMana(value);
+                player.collectMana(value);
                 break;
             case CollectableItem.MONEY:
                 GameManager.sharedInstance.collectObject(this);

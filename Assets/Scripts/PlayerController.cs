@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -15,11 +12,11 @@ public class PlayerController : MonoBehaviour {
     const string STATE_IS_ALIVE = "isAlive";
     const string STATE_IS_ON_THE_GROUND = "isOnTheGround";
 
-    private int healthPoints { set; get; }
-    private int manaPoints { set; get; }
+    public int healthPoints { set; get; }
+    public int manaPoints { set; get; }
 
     //Contants
-    public const int INITIAL_HEALTH = 100;
+    public const int INITIAL_HEALTH = 50;
     public const int INITIAL_MANA = 15;
     public const int MAX_HEALTH = 200;
     public const int MAX_MANA = 30;
