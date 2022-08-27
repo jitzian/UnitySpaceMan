@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+
     //Variables of the character
     public float jumpForce = 6f;
     public float runningSpeed = 2f; // m/s
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     public int healthPoints { set; get; }
     public int manaPoints { set; get; }
 
-    //Contants
+    //Constants
     public const int INITIAL_HEALTH = 50;
     public const int INITIAL_MANA = 15;
     public const int MAX_HEALTH = 200;
@@ -114,34 +115,22 @@ public class PlayerController : MonoBehaviour {
     //Check if player is touching the ground
     bool IsTouchingTheGround() {
         return Physics2D.Raycast(
-            this.transform.position,
+            transform.position,
             Vector2.down,
             1.5f,
             groundMask
-        )
-            ? true
-            : false;
-
-        /*if(Physics2D.Raycast(
-                        this.transform.position,
-                        Vector2.down,
-                        1.5f,
-                        groundMask
-                    )
-            )
-        {
-            //animator.enabled = true;            
-            return true;
-        }
-        else
-        {
-            //animator.enabled = false;
-            return false;
-        }*/
+        );
     }
 
     public void die() {
-        this.animator.SetBool(STATE_IS_ALIVE, false);
+        var travelledDistance = getDistance();
+        var previousDistance = PlayerPrefs.GetFloat("maxScore", 0f);
+        
+        if (travelledDistance > previousDistance) {
+            PlayerPrefs.SetFloat("maxScore", travelledDistance);
+        }
+
+        animator.SetBool(STATE_IS_ALIVE, false);
         GameManager.sharedInstance.gameOver();
     }
 
@@ -155,5 +144,9 @@ public class PlayerController : MonoBehaviour {
         if (manaPoints < MAX_MANA) {
             manaPoints += points;
         }
+    }
+
+    public float getDistance() {
+        return transform.position.x - startPosition.x;
     }
 }
