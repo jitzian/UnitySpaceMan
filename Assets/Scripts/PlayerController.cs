@@ -1,7 +1,7 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
     //Variables of the character
     public float jumpForce = 6f;
     public float runningSpeed = 2f; // m/s
@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour {
 
     public int healthPoints { set; get; }
     public int manaPoints { set; get; }
+
+    public const int superJumpCost = 5;
+    public const float superJumpForce = 1.5f;
 
     //Constants
     public const int INITIAL_HEALTH = 50;
@@ -90,7 +93,12 @@ public class PlayerController : MonoBehaviour {
     private void checkInputActions() {
         if (Input.GetButtonDown("Jump")) {
             Debug.Log("Prepare to Jump..!!");
-            Jump();
+            Jump(false);
+        }
+
+        if (Input.GetButtonDown("SuperJump")) {
+            Debug.Log("Prepare to Super Jump..!!");
+            Jump(true);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
@@ -104,10 +112,17 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void Jump() {
+    void Jump(Boolean isSuperJump) {
+        var jumpForceFactor = jumpForce;
+        if (isSuperJump && manaPoints >= superJumpCost) {
+            manaPoints -= superJumpCost;
+            jumpForceFactor *= superJumpForce;
+        }
+
         if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME) {
             if (IsTouchingTheGround()) {
-                rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                //rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                rigidBody.AddForce(Vector2.up * jumpForceFactor, ForceMode2D.Impulse);
             }
         }
     }
@@ -125,7 +140,7 @@ public class PlayerController : MonoBehaviour {
     public void die() {
         var travelledDistance = getDistance();
         var previousDistance = PlayerPrefs.GetFloat("maxScore", 0f);
-        
+
         if (travelledDistance > previousDistance) {
             PlayerPrefs.SetFloat("maxScore", travelledDistance);
         }
