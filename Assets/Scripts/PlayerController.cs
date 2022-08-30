@@ -121,7 +121,6 @@ public class PlayerController : MonoBehaviour {
 
         if (GameManager.sharedInstance.currentGameState == GameState.IN_GAME) {
             if (IsTouchingTheGround()) {
-                //rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 rigidBody.AddForce(Vector2.up * jumpForceFactor, ForceMode2D.Impulse);
             }
         }
