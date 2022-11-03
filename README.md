@@ -1,4 +1,4 @@
-# UnitySpaceMan
+# SpaceMan with Unity
 Baby Steps for creating a functional 2D game in Unity
 
 
