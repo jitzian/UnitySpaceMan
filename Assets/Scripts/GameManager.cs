@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
             sharedInstance = this;
         }
 
-        GameOverMenuManager.sharedInstance.ShowGameOverMenu(false);
+        //GameOverMenuManager.sharedInstance.ShowGameOverMenu(false);
     }
 
 
